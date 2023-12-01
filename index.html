@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./list-style.css">
+</head>
+
+<body>
+    <div class="container my-5">
+        <div class="p-5 text-center bg-body-tertiary rounded-3">
+            <h1 class="text-body-emphasis">Basic jumbotron</h1>
+            <p class="lead">
+                This is a simple Bootstrap jumbotron that sits within a <code>.container</code>, recreated with built-in
+                utility classes.
+            </p>
+            <br>
+            <p>
+                this area is for displaying the texxt
+            </p>
+            <h1 class="text-body-emphasis">Your Password will be: <code id="passwordTypeSelected"></code> of 10
+                character's length</h1>
+        </div>
+      
+    </div>
+    <div class="container my-5">
+      
+        <div class="row">
+            <div class="col">
+                <div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+                    <div class="list-group list-group-checkable d-grid gap-2 border-0">
+
+                        <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios"
+                            id="listGroupCheckableRadios1" value="" checked>
+                        <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios1">
+                            AlphaNumeric
+                            <span class="d-block small opacity-50">Example: Pa55words</span>
+                        </label>
+
+                        <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios"
+                            id="listGroupCheckableRadios2" value="">
+                        <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios2">
+                            AlphaNumeric with UpperCase
+                            <span class="d-block small opacity-50">Example: PA55WORDS</span>
+                        </label>
+                        <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios"
+                            id="listGroupCheckableRadios3" value="">
+                        <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios3">
+                            AlphaNumeric with LowerCase
+                            <span class="d-block small opacity-50">Example: pa55words</span>
+                        </label>
+
+                        <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios"
+                            id="listGroupCheckableRadios4" value="">
+                        <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios4">
+                            AlphaNumeric with Special Character
+                            <span class="d-block small opacity-50">p@55ord$</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <label for="customRange3" class="form-label">Password Length:</label>
+                <input type="range" class="form-range" min="8" max="65" step="8" id="customPasswordRange">
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        let passwordType = document.getElementsByName("listGroupCheckableRadios");
+        let passwordTypeSelectedVal = document.createElement("p");
+        passwordTypeSelectedVal.textContent = passwordType.id;
+        document.getElementById("passwordTypeSelected").appendChild(passwordTypeSelectedVal)
+
+        let passwordLength = document.getElementById("customPasswordRange");
+        if(passwordLength){
+            passwordLength.textContent = ""
+        }
+    </script>
+</body>
+
+</html>
